@@ -1,7 +1,23 @@
 import React from 'react';
 import './login.css';
+import  'whatwg-fetch'
+
 const user_name_len =20;
 const user_pwd_len = 16;
+
+var  fetchData = ()=>{
+    console.log('-----------------------')
+    var result = fetch('https://api.github.com')
+    result.then(function(response) {
+        console.log('response', response)
+        console.log('header', response.headers.get('Content-Type'))
+        return response.text()
+    }).then(function(text) {
+        console.log('got text', text)
+    }).catch(function(ex) {
+        console.log('failed', ex)
+    })
+}
 
 class Login extends React.Component{
 
@@ -14,6 +30,7 @@ class Login extends React.Component{
     }
 
     handleChange(event){
+        fetchData();
         console.log(event.target);
         if (event.target.id === 'User-name'){
             var value = event.target.value;
@@ -32,7 +49,8 @@ class Login extends React.Component{
         console.log(regex);
         if (regex.test(userName)){
             if (regex.test(userPwd)){
-                alert(this.state.user_pwd);
+                // alert(this.state.user_pwd);
+                // fetchData();
             }else {
                 alert('密码必须有字母或者数字组成');
             }
@@ -49,7 +67,6 @@ class Login extends React.Component{
                     <input id="User-password" placeholder="密码"
                            maxLength={user_pwd_len} type="password" onChange={this.handleChange} />
                     <input id="Submit" value="登陆" type="submit" />
-ｓ
         </form>);
     }
 }
