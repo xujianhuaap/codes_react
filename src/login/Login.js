@@ -16,14 +16,30 @@ class Login extends React.Component{
     handleChange(event){
         console.log(event.target);
         if (event.target.id === 'User-name'){
-            this.setState({user_name:event.target.value}) ;
+            var value = event.target.value;
+            this.setState({user_name:value}) ;
+
+
         }else if (event.target.id === 'User-password'){
             this.setState({user_pwd:event.target.value}) ;
         }
 
     }
     handleSubmit(){
-       alert(this.state.user_pwd);
+        var regex = this.props.regex;
+        var userName = this.state.user_name;
+        var userPwd = this.state.user_pwd;
+        console.log(regex);
+        if (regex.test(userName)){
+            if (regex.test(userPwd)){
+                alert(this.state.user_pwd);
+            }else {
+                alert('密码必须有字母或者数字组成');
+            }
+        }else {
+            alert('用户名必须有字母或者数字组成');
+        }
+
     }
 
      render(){
@@ -33,7 +49,7 @@ class Login extends React.Component{
                     <input id="User-password" placeholder="密码"
                            maxLength={user_pwd_len} type="password" onChange={this.handleChange} />
                     <input id="Submit" value="登陆" type="submit" />
-
+ｓ
         </form>);
     }
 }
