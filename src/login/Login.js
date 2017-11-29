@@ -1,18 +1,17 @@
 import React from 'react';
 import './login.css';
-import  'whatwg-fetch'
+import  {GetData} from '../http/Http'
 
 const user_name_len =20;
 const user_pwd_len = 16;
 
-var  fetchData = ()=>{
-    console.log('-----------------------')
-    var result = fetch('https://api.github.com')
-    result.then(function(response) {
+var  fetchData = function(com){
+    GetData('https://api.github.com/user').then(function(response) {
         console.log('response', response)
         console.log('header', response.headers.get('Content-Type'))
         return response.text()
     }).then(function(text) {
+        com.setState({login_content:text})
         console.log('got text', text)
     }).catch(function(ex) {
         console.log('failed', ex)
@@ -23,12 +22,15 @@ class Login extends React.Component{
 
     constructor(props){
         super(props);
-        this.state={user_name:'',user_pwd:''};
+        this.state={user_name:'',user_pwd:'',login_content:''};
 
         this.handleSubmit=this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
+    componentDidMount(){
+        fetchData(this);
+    }
     handleChange(event){
         fetchData();
         console.log(event.target);
@@ -67,6 +69,7 @@ class Login extends React.Component{
                     <input id="User-password" placeholder="密码"
                            maxLength={user_pwd_len} type="password" onChange={this.handleChange} />
                     <input id="Submit" value="登陆" type="submit" />
+                    <p>{this.state.login_content}</p>
         </form>);
     }
 }
