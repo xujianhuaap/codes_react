@@ -9,7 +9,7 @@ const headerValue= {
 var FetchData = function (url,methodValue,requestBodyValue) {
     var  op={
         method: methodValue,
-        credentials: 'same-origin',//'include'
+        credentials: 'include',//'include'
         headers: headerValue,
         mode:'ｎo-cors',
 

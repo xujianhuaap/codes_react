@@ -6,7 +6,7 @@ const user_name_len =20;
 const user_pwd_len = 16;
 
 var  fetchData = function(com){
-    GetData('https://api.github.com/user').then(function(response) {
+    GetData('https://skullmind.cn/').then(function(response) {
         console.log('response', response)
         console.log('header', response.headers.get('Content-Type'))
         return response.text()
