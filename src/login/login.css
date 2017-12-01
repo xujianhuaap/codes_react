@@ -1,3 +1,6 @@
+.Title{
+    margin-top: 1%;
+}
 .App-login {
     display: flex;
     flex-direction: column;
@@ -10,7 +13,7 @@
     max-width: 600px;
     word-break: break-all;
     padding: 10px;
-    margin-top: 10%;
+    margin-top: 4%;
     display: inline-block;
     flex: 1;
     background-color: wheat;
