@@ -7,7 +7,7 @@ const user_name_len =20;
 const user_pwd_len = 16;
 
 var  fetchData = function(com){
-    GetData('http://skullmind.cn/api/login').then(function(response) {
+    GetData('https://skullmind.cn/api/login').then(function(response) {
         console.log('response', response)
         console.log('header', response.headers.get('Content-Type'))
         return response.text();
@@ -62,7 +62,7 @@ class Login extends React.Component{
 
      render(){
         if (this.state.login_success){
-            return <Redirect push to = '/login/success'/>
+            return <Redirect push to = '/blog/Blog'/>
         }
         return  (<div>
             <div className="Title"> 铭之力量</div>

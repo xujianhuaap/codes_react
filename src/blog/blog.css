@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.blog-content-table{
+    flex: 0.2;
+    background-color: darkolivegreen;
+    margin: auto;
+}
+.blog-main{
+    flex:0.8;
+    margin: auto;
+
+}
+.blog-title{
+    font-size: 1.6em;
+    margin-top: 20px;
+    font-style: oblique;
+    color: darkolivegreen;
+}
+.container-tag-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.blog-tag{
+    font-size: 1em;
+    text-align: right;
+    flex: 1;
+}
+.blog-date{
+    width: auto;
+    margin-right: 20px;
+    margin-left: 10px;
+    text-align: right;
+    font-size:1em;
+}
+.blog-content{
+    font-size: 1.2em;
+}
+.item-content{
+    text-align: left;
+}

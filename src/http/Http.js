@@ -11,7 +11,7 @@ var FetchData = function (url,methodValue,requestBodyValue) {
         method: methodValue,
         credentials: 'include',//'include'
         headers: headerValue,
-        mode:'ｎo-cors',
+        mode:'no-cors',
 
     };
     if(methodValue === 'POST'){
