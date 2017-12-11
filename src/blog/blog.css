@@ -1,16 +1,21 @@
 .container{
     display: flex;
     flex-direction: row;
-    margin: auto;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: antiquewhite;
 }
 .blog-content-table{
     flex: 0.2;
     background-color: darkolivegreen;
-    margin: auto;
+    align-self: stretch;
+    padding-top: 80px;
+    min-height: 600px;
 }
 .blog-main{
     flex:0.8;
-    margin: auto;
+    background-color: coral;
+    align-self: stretch;
 
 }
 .blog-title{
@@ -41,4 +46,7 @@
 }
 .item-content{
     text-align: left;
+}
+.wrapper-content{
+    list-style: none;
 }
