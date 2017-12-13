@@ -1,5 +1,6 @@
 import React from 'react'
 import './blog.css'
+import titleImg from './blog.svg'
 
 class Blog extends React.Component{
     contentTable(arr) {
@@ -35,6 +36,7 @@ class Blog extends React.Component{
             </div>
 
             <div className="blog-main">
+                <img src={titleImg}/>
                 <div className="blog-title">{this.state.selectedData.title}</div>
                 <div className='container-tag-date'>
                     <div className= 'blog-tag'>{this.state.selectedData.tag}</div>

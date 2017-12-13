@@ -44,6 +44,10 @@
 .blog-content{
     font-size: 1.2em;
 }
+.blog-img{
+    width: 100px;
+    height: 100px;
+}
 .item-content{
     text-align: left;
 }
